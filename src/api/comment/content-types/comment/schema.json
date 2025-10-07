@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "comments",
+  "info": {
+    "singularName": "comment",
+    "pluralName": "comments",
+    "displayName": "Comment"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "handle": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 50,
+      "required": true
+    },
+    "comment": {
+      "type": "richtext",
+      "required": true
+    },
+    "article": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::article.article",
+      "inversedBy": "comments"
+    }
+  }
+}
